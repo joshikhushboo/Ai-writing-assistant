@@ -70,9 +70,9 @@ const Editor = () => {
       console.error("Error rephrasing sentence:", error);
 
       alert(
-        error.response?.data?.message ||
-          "Something went wrong while rephrasing the sentence."
-      );
+  error.response?.data?.error ||
+    "Something went wrong while rephrasing the sentence."
+);
     } finally {
       setIsRephrasing(false);
     }
@@ -118,7 +118,7 @@ const Editor = () => {
       console.error("Error checking spelling:", error);
 
       alert(
-        error.response?.data?.message ||
+        error.response?.data?.error ||
           "Something went wrong while checking spelling."
       );
     }

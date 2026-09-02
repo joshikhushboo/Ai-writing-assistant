@@ -21,12 +21,12 @@ analyzeRoute.post("/", async (req, res) => {
         });
     }
 
-    const allowedStyles = [
-        "professional",
-        "simple",
-        "friendly",
-        "creative",
-    ];
+   const allowedStyles = [
+    "professional",
+    "friendly",
+    "casual",
+    "creative",
+];
 
     if (!allowedStyles.includes(style)) {
         return res.status(400).json({
@@ -45,12 +45,14 @@ Rephrase the following sentence in 3 different natural ways.
 Writing style: ${style}
 
 Style instructions:
+
 - Professional: formal, polished, and suitable for workplace or academic writing.
-- Simple: clear, easy to understand, and concise.
 - Friendly: warm, natural, and conversational.
+- Casual: relaxed, natural, and informal while keeping the original meaning.
 - Creative: expressive, engaging, and slightly more interesting while keeping the original meaning.
 
 Important:
+
 - Keep the original meaning.
 - Do not add new information.
 - Return ONLY the 3 rephrased sentences.
@@ -59,7 +61,6 @@ Important:
 
 Sentence: ${sentence}
 `;
-
         const result = await model.generateContent(prompt);
 
         const text = result.response.text().trim();
