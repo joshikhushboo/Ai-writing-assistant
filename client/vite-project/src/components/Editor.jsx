@@ -9,6 +9,7 @@ import {
   FaPencilAlt,
 } from "react-icons/fa";
 import { SiGrammarly } from "react-icons/si";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Editor = () => {
   const { getAccessToken } = usePrivy();
@@ -49,7 +50,7 @@ const Editor = () => {
       const token = await getAccessToken();
 
       const response = await axios.post(
-        "http://localhost:8000/api/analyze",
+        `${API_URL}/api/analyze`,
         {
           sentence: text,
           style: selectedStyle,
@@ -102,7 +103,7 @@ const Editor = () => {
       const token = await getAccessToken();
 
       const response = await axios.post(
-        "http://localhost:8000/api/spellcheck",
+        `${API_URL}/api/spellcheck`,
         { text },
         token
           ? {
@@ -138,7 +139,7 @@ const Editor = () => {
       const token = await getAccessToken();
 
       const response = await axios.post(
-        "http://localhost:8000/api/grammarcheck",
+        `${API_URL}/api/grammarcheck`,
         { text },
         token
           ? {
