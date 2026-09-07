@@ -65,8 +65,8 @@ const Home = () => {
 
       <footer className="bg-gray-800 text-white py-8 text-center">
         <p>
-          AI Writing Assistant ©{new Date().getFullYear()} | Powered by
-          Masynctech Coding School
+          AI Writing Assistant ©{new Date().getFullYear()} Made by
+         Khushboo Joshi
         </p>
       </footer>
     </div>
